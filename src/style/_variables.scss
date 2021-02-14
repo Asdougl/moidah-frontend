@@ -1,0 +1,115 @@
+$orchid: #bd31cb;
+$yellow: #f1b63a;
+
+$primary: #292526;
+$secondary: #312f30;
+$thirdary: #191617;
+
+$text: #f1f1f1;
+
+$confirm: #379e62;
+$deny: #bd4040;
+
+$max-width: 700px;
+
+// Mixins
+@mixin main-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding:1em;
+    height: calc(100vh - 6.4rem);
+}
+
+@mixin bottom-nav-container {
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+@mixin bottom-nav-content {
+    width:100%;
+    max-width:$max-width;
+    margin:0 auto;
+    height:100%;
+    background:linear-gradient(90deg, $orchid, $yellow);
+    height:3em;
+}
+
+@mixin bottom-nav-buttons {
+    display: flex;
+
+    button {
+        flex: 1 1 0;
+        margin:0.2em;
+        background:$thirdary;
+        color:$text;
+        font-size:1.2em;
+        border:none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:disabled {
+            opacity: 0.6;
+        }
+    }
+}
+
+@mixin button-reset {
+    font-size:1em;
+    background:$thirdary;
+    color:$text;
+    border:none;
+    padding:0.4em 0.6em;
+    border-radius: 1em;
+    font:inherit;
+    cursor: pointer;
+
+    &:hover {
+        background:$secondary;
+    }
+
+    &:focus {
+        outline:none;
+        box-shadow: 0px 0px 1px 2px rgba($text, 0.5);
+    }
+}
+
+@mixin button-done {
+    font-size:1em;
+    background:white;
+    color:black;
+    border:none;
+    padding:0.4em 0.6em;
+    border-radius: 1em;
+    font:inherit;
+    cursor: pointer;
+
+    position: absolute;
+    left:0;bottom:0;
+
+    
+    width:100%;
+    height:2em;
+
+    &:hover {
+        background:$secondary;
+    }
+
+    &:focus {
+        outline:none;
+        box-shadow: 0px 0px 1px 2px rgba($text, 0.5);
+    }
+}
+
+@mixin task-container {
+    height: 100%;
+    width: 100%;
+    padding:0.4em;
+    position: relative;
+}
